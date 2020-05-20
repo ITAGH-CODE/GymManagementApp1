@@ -1,0 +1,51 @@
+﻿@model IEnumerable<GymApp.CORE.Entities.Client>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<div class="card">
+    <div class="card-header">
+        <p>
+            <button onclick="showInPopup('@Url.Action("CreateClient","Client",null,Context.Request.Scheme)','New client')" class="btn btn-outline-info"><i class="fa fa-plus-square"></i> New client</button>
+        </p>
+    </div>
+    <div class="card-body">
+        <div id="view-list-clients" style="padding-bottom:100px;">
+            @await Html.PartialAsync("_ViewListClients", Model)
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal HTML -->
+<div id="delete-modal" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content card">
+            <div class="modal-header card-header">
+                <h4 class="modal-title">Are you sure ?</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body card-body">
+                <p>Do you really want to delete this client ? This process cannot be undone.</p>
+            </div>
+            <div class="modal-footer card-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                <button id="btnDelete" type="button" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/ListClientsEvents.js"></script>
+
+}

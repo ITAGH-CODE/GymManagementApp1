@@ -1,0 +1,139 @@
+﻿@model GymApp.CORE.Entities.Client
+
+@{
+    ViewData["Title"] = "CreateClient";
+    Layout = null;
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-7">
+                @if (Model.IdClient == 0)
+                {
+                    <h4>New client</h4>
+                }
+                else
+                {
+                    <h4>Edit client</h4>
+                }
+            </div>
+            <div class="col-md-5">
+                <a asp-action="List" class="btn btn-light btn-back-to-list"><i class="fa fa-list"></i> Back to List</a>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="card-body">
+        @if (Model.IdClient != 0)
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="payment-div-ok">
+                        <span>Payment was done</span>
+                    </div>
+                    <div class="payment-div-nok">
+                        <span>payment has not been done</span>
+                    </div>
+                </div>
+            </div><br />
+        }
+        <div class="row">
+            <div class="col-md-12">
+                <form id="MyForm" onsubmit="return JqueryAjaxPost(this);" asp-controller="Client" asp-action="CreateClient" asp-route-id="@Model.IdClient" autocomplete="off">
+                    <input asp-for="IdClient" class="form-control" value="@Model.IdClient" hidden />
+                    <input asp-for="IdPaymentOnGoing" class="form-control" value="@Model.IdPaymentOnGoing" hidden />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-row form-group">
+                        <div class="input-group col-md-6">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text bg-white">
+                                    <i class="fa fa-user-circle"></i>
+                                </div>
+                            </div>
+                            <input asp-for="FirstName" class="form-control" placeholder="First name" value="@Model.FirstName" />
+                        </div>
+                        <div class="input-group col-md-6">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text bg-white">
+                                    <i class="fa fa-user-circle"></i>
+                                </div>
+                            </div>
+                            <input asp-for="LastName" class="form-control" placeholder="Last name" value="@Model.LastName" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text bg-white">
+                                    <i class="fa fa-id-badge"></i>
+                                </div>
+                            </div>
+                            <input asp-for="ICN" class="form-control" placeholder="ICN" value="@Model.ICN" />
+                            <span asp-validation-for="ICN" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text bg-white">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                            </div>
+                            <input asp-for="Phone" class="form-control" placeholder="Phone" value="@Model.Phone" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text bg-white">
+                                    <i class="fa fa-at"></i>
+                                </div>
+                            </div>
+                            <input asp-for="Email" class="form-control" placeholder="Email" value="@Model.Email" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <input type="submit" value="Submit" class="btn btn-primary" />
+                                <input type="button" value="Reset" onclick="onReset()" class="btn btn-secondary" />
+                            </div>
+                            @if (Model.IdClient != 0)
+                            {
+                                <div class="col-md-3">
+                                    <input type="button" value="Pay" id="btnPay" class="btn btn-success" onclick="pay(@Model.IdClient)" />
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        @if (Model.IdClient != 0)
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group text-center">
+                        <span class="payment-info">Last payed period : </span><span id="lastPayedPeriod"></span>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<script>
+    $(document).ready(function () {
+        if (@Model.IdClient != 0) {
+            getLastPayedPeriod(@Model.IdPaymentOnGoing);
+            isPaymentOK(@Model.IdPaymentOnGoing);
+        }
+    });
+</script>

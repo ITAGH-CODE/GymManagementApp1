@@ -1,0 +1,15 @@
+C:\Users\Ilyasse\Documents\PROJECTS\GymManagementApp-NETCORE\GymApp.Infrastructure\bin\Debug\netcoreapp3.1\GymApp.Infrastructure.deps.json
+C:\Users\Ilyasse\Documents\PROJECTS\GymManagementApp-NETCORE\GymApp.Infrastructure\bin\Debug\netcoreapp3.1\GymApp.Infrastructure.runtimeconfig.json
+C:\Users\Ilyasse\Documents\PROJECTS\GymManagementApp-NETCORE\GymApp.Infrastructure\bin\Debug\netcoreapp3.1\GymApp.Infrastructure.runtimeconfig.dev.json
+C:\Users\Ilyasse\Documents\PROJECTS\GymManagementApp-NETCORE\GymApp.Infrastructure\bin\Debug\netcoreapp3.1\GymApp.Infrastructure.dll
+C:\Users\Ilyasse\Documents\PROJECTS\GymManagementApp-NETCORE\GymApp.Infrastructure\bin\Debug\netcoreapp3.1\GymApp.Infrastructure.pdb
+C:\Users\Ilyasse\Documents\PROJECTS\GymManagementApp-NETCORE\GymApp.Infrastructure\bin\Debug\netcoreapp3.1\GymApp.CORE.dll
+C:\Users\Ilyasse\Documents\PROJECTS\GymManagementApp-NETCORE\GymApp.Infrastructure\bin\Debug\netcoreapp3.1\GymApp.CORE.pdb
+C:\Users\Ilyasse\Documents\PROJECTS\GymManagementApp-NETCORE\GymApp.Infrastructure\obj\Debug\netcoreapp3.1\GymApp.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Ilyasse\Documents\PROJECTS\GymManagementApp-NETCORE\GymApp.Infrastructure\obj\Debug\netcoreapp3.1\GymApp.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Ilyasse\Documents\PROJECTS\GymManagementApp-NETCORE\GymApp.Infrastructure\obj\Debug\netcoreapp3.1\GymApp.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Ilyasse\Documents\PROJECTS\GymManagementApp-NETCORE\GymApp.Infrastructure\obj\Debug\netcoreapp3.1\GymApp.Infrastructure.AssemblyInfo.cs
+C:\Users\Ilyasse\Documents\PROJECTS\GymManagementApp-NETCORE\GymApp.Infrastructure\obj\Debug\netcoreapp3.1\GymApp.Infrastructure.csproj.CopyComplete
+C:\Users\Ilyasse\Documents\PROJECTS\GymManagementApp-NETCORE\GymApp.Infrastructure\obj\Debug\netcoreapp3.1\GymApp.Infrastructure.dll
+C:\Users\Ilyasse\Documents\PROJECTS\GymManagementApp-NETCORE\GymApp.Infrastructure\obj\Debug\netcoreapp3.1\GymApp.Infrastructure.pdb
+C:\Users\Ilyasse\Documents\PROJECTS\GymManagementApp-NETCORE\GymApp.Infrastructure\obj\Debug\netcoreapp3.1\GymApp.Infrastructure.genruntimeconfig.cache
